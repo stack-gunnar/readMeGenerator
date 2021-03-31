@@ -1,0 +1,23 @@
+{
+  "name": "readmegenerator",
+  "version": "1.0.0",
+  "description": "creating professional README with inquirer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stack-gunnar/readMeGenerator.git"
+  },
+  "author": "Bill Judd",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stack-gunnar/readMeGenerator/issues"
+  },
+  "homepage": "https://github.com/stack-gunnar/readMeGenerator#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "inquirer": "^8.0.0"
+  }
+}
