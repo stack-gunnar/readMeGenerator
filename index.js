@@ -1,9 +1,11 @@
 
 const inquirer = require('inquirer');
 const fs = require('fs');
-const axios = require('axios');
+const generateMarkdown = require('./utils/generateMarkdown');
 
-console.log()
+console.log('Lets make a README.md');
+
+
 
 inquirer.prompt([
     {
@@ -28,13 +30,13 @@ inquirer.prompt([
     },
     {
         type: 'input',
-        name: 'contribution',
-        message: 'What are the contribution guidelines?',
+        name: 'contributing',
+        message: 'Who contributed to this project?',
     },
     {
         type: 'input',
         name: 'test', 
-        message: 'What are the testing instructions',
+        message: 'Has any testing been done?',
     },
     {
         type: 'list',
@@ -53,11 +55,20 @@ inquirer.prompt([
         type: 'input',
         name: 'github',
         message: 'What is you GitHub username?',
-    }
+    },
     {
         type: 'input',
         name: 'email',
         message: 'What is you email address?',
-    }
+    },
 ])
+
+.then((userinput) => {
+    const readMePageContent = generateMarkdown(userinput);
+
+    fs. writeFile('ReadMe.md', readMePageContent, (err) =>
+    err ? console.log(err) : console.log('Successfully created index.html!')
+    );
+})
+
 
